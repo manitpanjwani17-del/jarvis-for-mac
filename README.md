@@ -2,7 +2,7 @@
 
 <img src="docs/images/hud-listening.png" width="420" alt="Jarvis's glowing ring, listening">
 
-# Jarvis for Mac (free)
+# Jarvis for Mac (2026)
 
 ### A voice assistant and voice typing for your Mac, free, private, and running 100% on your own computer.
 
