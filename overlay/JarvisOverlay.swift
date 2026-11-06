@@ -120,7 +120,7 @@ struct HUDView: View {
         let r2: CGFloat = 74
         let ticks = 60
         for i in 0..<Int(Double(ticks) * boot) {
-            let a = Double(i) / Double(ticks) * 2 * .pi - t * 0.22 * speed
+            let a = CGFloat(Double(i) / Double(ticks) * 2 * .pi - t * 0.22 * speed)
             let long = i % 5 == 0
             let inner = r2 - (long ? 7 : 3.5)
             var p = Path()
@@ -140,7 +140,7 @@ struct HUDView: View {
         let r4: CGFloat = 44
         let bars = 36
         for i in 0..<bars {
-            let a = Double(i) / Double(bars) * 2 * .pi
+            let a = CGFloat(Double(i) / Double(bars) * 2 * .pi)
             let wobble = reduceMotion ? 0.5 : (0.5 + 0.5 * sin(t * 7 + Double(i) * 1.7))
             let h = 2 + CGFloat(lvl * 12 * wobble)
             var p = Path()
