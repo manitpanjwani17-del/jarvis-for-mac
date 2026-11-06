@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key><string>local.jarvis.messenger</string>
+  <key>CFBundleName</key><string>Jarvis</string>
+  <key>NSContactsUsageDescription</key><string>Jarvis looks up a person's number when you ask him to message them.</string>
+</dict>
+</plist>

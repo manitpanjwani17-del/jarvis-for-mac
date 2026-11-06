@@ -1,0 +1,35 @@
+# Built app and disk image (published on the Releases page, not in the code)
+build/
+*.dmg
+*.app/
+
+# Anything personal or generated. Jarvis keeps these in ~/Library/Application Support/Jarvis for Mac,
+# but never commit them if they ever appear here.
+data/
+logs/
+models/
+cache/
+samples/
+*.log
+*.npz
+*.wav
+*.sqlite
+*.sqlite-*
+.env
+.env.*
+*.pem
+*.key
+
+# Python and Swift leftovers
+__pycache__/
+*.pyc
+.venv/
+venv/
+.build/
+helpers/Jarvis*
+!helpers/*.swift
+!helpers/*.plist
+overlay/JarvisOverlay
+
+# macOS
+.DS_Store

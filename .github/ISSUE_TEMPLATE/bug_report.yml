@@ -1,0 +1,59 @@
+name: Bug report
+description: Something doesn't work as it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting!
+        **Please never paste real messages, contacts, phone numbers, names or full logs.** Describe them, or use made-up examples.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you said or did, what you expected, and what Jarvis did instead.
+      placeholder: I held fn in Notes and said "...", and instead of typing it showed the card.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part?
+      options:
+        - Setup / installing
+        - "Hey Jarvis" / hearing
+        - Voice typing (fn)
+        - WhatsApp or iMessage
+        - Music
+        - Calendar, reminders, timers
+        - Screen reading
+        - Memory or voice recognition
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac and macOS
+      placeholder: MacBook Air M2, 16 GB, macOS 15.3
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Jarvis version
+      description: Menu bar ring → About Jarvis for Mac
+      placeholder: "1.0.0"
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant log lines (optional)
+      description: From menu bar ring → What Jarvis did (log). Remove any names or numbers first.
+      render: text
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed personal details (names, numbers, message text) from this report.
+          required: true

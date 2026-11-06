@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python code compiles
+        run: python3 -m compileall -q jarvis.py jarvis_core setup tests
+      - name: Shell scripts are valid
+        run: for f in setup.sh setup/install.sh scripts/build.sh; do sh -n "$f"; done
+      - name: Model list is valid
+        run: python3 -c "import json; m = json.load(open('setup/models.json')); assert all(f['url'].startswith('https://') and len(f['sha256']) == 64 for f in m['files'])"
+      - name: Every Python package has a checksum
+        run: python3 -c "import re; t = open('requirements.lock').read(); pins = re.findall(r'^[A-Za-z0-9_.-]+==', t, re.M); assert pins and t.count('--hash=sha256:') >= len(pins)"
+      - name: Build the app and DMG
+        run: sh scripts/build.sh
+      - name: fn key logic
+        run: '"build/Jarvis for Mac.app/Contents/Resources/jarvis/helpers/JarvisDictate" --test-fn'

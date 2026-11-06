@@ -1,0 +1,10 @@
+# What Jarvis needs directly. requirements.lock pins these and everything they need, with checksums.
+faster-whisper
+mlx-whisper
+kokoro-onnx
+openwakeword
+sherpa-onnx
+sounddevice
+numpy
+scipy
+certifi

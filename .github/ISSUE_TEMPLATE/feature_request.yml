@@ -1,0 +1,22 @@
+name: Feature idea
+description: Something you'd love Jarvis to do.
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Jarvis to do?
+      placeholder: When I say "...", I'd like Jarvis to ...
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help you?
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Jarvis's rules
+      description: Jarvis stays free, local and private, and always asks before sending.
+      options:
+        - label: This idea works without a cloud service, account or paid API.
